@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GABXB://LAB — bulletin board</title>
+  <meta name="description" content="Hacker bulletin board for GABXB LAB. Claude Code / Codex orchestrate Grok, Gemini, GPT, and local models.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#070b08">
+  <link rel="stylesheet" href="css/board.css">
+</head>
+<body>
+  <a class="skip" href="#board">Skip boot</a>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+  <div id="boot" class="boot" role="dialog" aria-label="System boot">
+    <button id="skip-boot" type="button">SKIP_</button>
+    <pre id="boot-log"></pre>
+  </div>
+
+  <main class="crt">
+    <section class="bezel">
+      <header class="topbar">
+        <div><strong>GABXB://LAB</strong> &nbsp; NODE-01</div>
+        <div class="live">BOARD LIVE</div>
+        <div id="clock">----</div>
+        <div class="lang">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+      </header>
+
+      <pre class="banner">  ██████╗  █████╗ ██████╗ ██╗  ██╗██████╗     ██╗      █████╗ ██████╗
+ ██╔════╝ ██╔══██╗██╔══██╗╚██╗██╔╝██╔══██╗    ██║     ██╔══██╗██╔══██╗
+ ██║  ███╗███████║██████╔╝ ╚███╔╝ ██████╔╝    ██║     ███████║██████╔╝
+ ██║   ██║██╔══██║██╔══██╗ ██╔██╗ ██╔══██╗    ██║     ██╔══██║██╔══██╗
+ ╚██████╔╝██║  ██║██████╔╝██╔╝ ██╗██████╔╝    ███████╗██║  ██║██████╔╝
+  ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═════╝     ╚══════╝╚═╝  ╚═╝╚═════╝</pre>
+      <p class="tagline" data-i18n="tagline">public node · bulletin board · no cookies</p>
+
+      <div id="board" class="board">
+        <article class="paper r1">
+          <span class="pin amber"></span>
+          <p class="kicker" data-i18n="heroKicker">notice 001 // pinned</p>
+          <h1 data-i18n="heroTitle">Multi-Agent Coding Orchestra</h1>
+          <p data-i18n="heroBody">Claude Code / Codex conduct. Grok researches. Gemini reviews. GPT implements. A local model verifies. Tests, git, and the PR come back to the conductor.</p>
+          <p data-i18n="heroSub">One person. One control plane. Many models doing the work.</p>
+          <span class="stamp" data-i18n="stamp">DO NOT REMOVE</span>
+        </article>
+
+        <article class="paper green r2">
+          <span class="pin cyan"></span>
+          <p class="kicker" data-i18n="opsKicker">thermal copy</p>
+          <h2 data-i18n="opsTitle">Operator commands</h2>
+          <ul class="cmds">
+            <li><code>/grok:research</code><span data-i18n="cmdResearch">survey repo / topic</span></li>
+            <li><code>/gemini:review</code><span data-i18n="cmdReview">challenge code, plans, diffs</span></li>
+            <li><code>/gpt:implement</code><span data-i18n="cmdImplement">scoped coding on the side</span></li>
+            <li><code>/claude:verify</code><span data-i18n="cmdVerify">second-pass check</span></li>
+            <li><code>/agent:status</code><span data-i18n="cmdStatus">jobs, waits, merge</span></li>
+          </ul>
+        </article>
+
+        <article class="paper dark r3">
+          <span class="pin green"></span>
+          <p class="kicker" data-i18n="archKicker">classified diagram</p>
+          <h2 data-i18n="archTitle">Control plane</h2>
+          <pre class="ascii">CLAUDE CODE / CODEX
+        │
+        ▼
+   ORCHESTRATOR
+    ├── GROK ──── RESEARCH
+    ├── GEMINI ── REVIEW
+    ├── GPT ───── IMPLEMENT
+    └── LOCAL ─── VERIFY
+           │
+           ▼
+    TESTS → GIT → PR</pre>
+        </article>
+
+        <article class="paper amber r4">
+          <span class="pin magenta"></span>
+          <p class="kicker" data-i18n="labKicker">open drawers</p>
+          <h2 data-i18n="labTitle">Lab index</h2>
+          <ul class="lab-list">
+            <li><a href="https://github.com/Gabxb/Gabxb">Gabxb / profile</a><span>README</span></li>
+            <li><a href="https://github.com/Gabxb/Design-to-Agent-ProjectA">Design-to-Agent</a><span>path</span></li>
+            <li><a href="https://github.com/Gabxb/Figma-Dev-STU">Figma-Dev-STU</a><span>studio</span></li>
+            <li><a href="https://github.com/Gabxb/AI-STU-KEYWORD">AI-STU-KEYWORD</a><span>lexicon</span></li>
+            <li><a href="https://github.com/Gabxb/FrequentlyUsedScripts">FrequentlyUsedScripts</a><span>ops</span></li>
+            <li><a href="https://github.com/Gabxb/UtilityScripts">UtilityScripts</a><span>nodes</span></li>
+          </ul>
+        </article>
+
+        <section class="span-2 wanted" aria-label="Workers">
+          <div class="worker"><span data-i18n="wantGrok">second opinion, fast</span><b>GROK</b><span class="role" data-i18n="roleResearch">research</span></div>
+          <div class="worker"><span data-i18n="wantGemini">second pair of eyes</span><b>GEMINI</b><span class="role" data-i18n="roleReview">review</span></div>
+          <div class="worker"><span data-i18n="wantGpt">side-lane coding</span><b>GPT</b><span class="role" data-i18n="roleImplement">implement</span></div>
+          <div class="worker"><span data-i18n="wantLocal">no quota / no net</span><b>LOCAL</b><span class="role" data-i18n="roleVerify">verify</span></div>
+        </section>
+
+        <article class="paper dark span-2">
+          <span class="pin blue"></span>
+          <p class="kicker" data-i18n="termKicker">local tty</p>
+          <h2 data-i18n="termTitle">gabxb@lab</h2>
+          <div id="term-log" class="term-log" aria-live="polite"></div>
+          <form id="term-form" class="prompt-row">
+            <label for="cmd">$</label>
+            <input id="cmd" name="cmd" autocomplete="off" spellcheck="false" placeholder="help">
+            <span class="caret" aria-hidden="true"></span>
+          </form>
+        </article>
+      </div>
+
+      <footer class="ticker">
+        <div>NODE PUBLIC · READ-ONLY</div>
+        <div>https://github.com/Gabxb</div>
+        <div>NO TRACKERS · MIT ASSETS</div>
+      </footer>
+    </section>
+  </main>
+  <script src="js/board.js"></script>
+</body>
+</html>
