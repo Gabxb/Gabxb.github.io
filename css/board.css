@@ -221,6 +221,11 @@ p { margin: 0 0 10px; line-height: 1.55; }
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
+.wanted > .kicker {
+  grid-column: 1 / -1;
+  color: var(--paper);
+  margin: 4px 2px 0;
+}
 .worker {
   background: #f4eccf;
   color: var(--ink);
