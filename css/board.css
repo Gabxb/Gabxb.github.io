@@ -72,6 +72,21 @@ a:hover { text-decoration: underline; }
 }
 
 .topbar strong { color: var(--phosphor); font-weight: 600; }
+.clock-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+}
+.clock-place {
+  color: var(--amber);
+  font-size: 10px;
+}
+#clock {
+  color: var(--phosphor);
+  font-variant-numeric: tabular-nums;
+}
 .live {
   color: var(--phosphor);
 }

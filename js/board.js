@@ -29,6 +29,7 @@ const copy = {
     termKicker: "local tty",
     termTitle: "gabxb@lab",
     cmdPlaceholder: "help",
+    clockPlace: "SINGAPORE",
     boot: [
       "CONNECTING TO GABXB://LAB ...",
       "AUTH: PUBLIC / READ-ONLY",
@@ -67,6 +68,7 @@ const copy = {
     termKicker: "本地终端",
     termTitle: "gabxb@lab",
     cmdPlaceholder: "help",
+    clockPlace: "新加坡",
     boot: [
       "正在接入 GABXB://LAB ...",
       "认证：公开 / 只读",
@@ -124,7 +126,21 @@ function applyLang(next) {
 function clock() {
   const el = document.getElementById("clock");
   const now = new Date();
-  el.textContent = now.toISOString().replace("T", " ").slice(0, 19) + "Z";
+  const fmt = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Singapore",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  });
+  const parts = Object.fromEntries(
+    fmt.formatToParts(now).map((p) => [p.type, p.value])
+  );
+  el.textContent = `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second} SGT`;
+  el.dateTime = now.toISOString();
 }
 
 function logLine(text) {
